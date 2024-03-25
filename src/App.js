@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Country from "./Components/Country"
+import Home from "./Components/Home"
+import NavBar from "./Components/NavBar"
+import { BrowserRouter } from "react-router-dom"
+import Pages from "./Pages/Pages"
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <BrowserRouter>
+      <main>
+        <section className="fixed z-[1000] w-full  bg-zinc-600">
+          <NavBar />
+        </section>
 
-export default App;
+        <section className="pt-[70px] pb-8 bg-slate-800">
+          <Home />
+        </section>
+
+        <section className="bg-zinc-600">
+          <Country />
+        </section>
+
+        <section>
+          <Pages />
+        </section>
+    </main>
+    </BrowserRouter>
+    
+  )
+}
